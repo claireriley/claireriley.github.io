@@ -13,3 +13,5 @@ dev server: http://localhost:8080
 ssh-add ~/.ssh/github
 password: yourname
 ```
+
+https://themes.gohugo.io/theme/tale-hugo/
