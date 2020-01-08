@@ -6,6 +6,8 @@ Personal Website
 python -m SimpleHTTPServer 8080
 ```
 
+dev server: http://localhost:8080
+
 ## SSH Key
 ```
 ssh-add ~/.ssh/github
