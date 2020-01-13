@@ -13,7 +13,7 @@ html, body {
 }
 
 html {
-  font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+  font-family: 'Karla', sans-serif, "Times New Roman", Times, serif;
   font-size: 14px;
   overflow-y: scroll
 }
@@ -28,9 +28,13 @@ body {
   -webkit-text-size-adjust: 100%
 }
 
+span, p {
+  font-family: 'Karla', sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #353535;
-  font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: 'Rubik', "Segoe UI", Helvetica, Arial, sans-serif;
   line-height: normal
 }
 
@@ -599,4 +603,50 @@ footer span {
   border-top: 0.2rem solid #353535;
   display: block;
   width: 2rem
+}
+
+/* Images */
+.image-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  flex-direction: column;
+  align-items: center;
+  padding: 2% 0%;
+}
+
+.image {
+  width: 100%;
+  background-size: cover;
+  opacity: 0.8;
+  height: 400px;
+
+ /*linear-gradient(to bottom, rgba(255,255,255, 0) 0%, rgba(0,0,0, 1) 100%);*/
+}
+
+.billing {
+  /*background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%),
+              url('/images/billing.png') no-repeat;*/
+
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgba(255, 255, 255, 1) 100%),
+              url('/images/billing.png') no-repeat;
+}
+
+img.image {
+  margin: 0;
+}
+
+.button {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2%;
+
+  border-radius: 20px;
+  background: #0f9e75;
+  width: 120px;
+  color: white;
+  text-align: center;
+
+  line-height: 2.3rem;
 }
