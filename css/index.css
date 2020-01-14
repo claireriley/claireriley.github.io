@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   color: #4a9ae1;
-  text-decoration: none
+  text-decoration: none;
 }
 
 blockquote {
@@ -151,7 +151,7 @@ pre code {
 }
 
 .post a:hover {
-  text-decoration: underline
+  text-decoration: underline;
 }
 
 .post img {
@@ -570,7 +570,9 @@ footer span {
   border-bottom: 1px solid #e5e5e5;
   color: #555;
   display: block;
-  padding: 2rem 0
+  padding: 2rem 0;
+
+  cursor: default;
 }
 
 .catalogue-item:hover .catalogue-line, .catalogue-item:focus .catalogue-line {
