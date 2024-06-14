@@ -35,12 +35,11 @@
     <meta name="twitter:description" content="Text about my cool site">
     
     
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
     <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
     <link rel="stylesheet" href="/css/footer.css" media="all">
     <link rel="stylesheet" href="/css/theme.css" media="all">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/animatedmodal@1.0.0/animatedModal.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hystmodal@1.0.1/dist/hystmodal.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/hystmodal@1.0.1/dist/hystmodal.min.js"></script>
     <style>
     :root {
     --text-color: #343a40;
@@ -128,10 +127,6 @@
         break;
     }
     </script>
-    
-    
-    
-    
     <script>
     var prevScrollPos = window.pageYOffset;
     window.addEventListener("scroll", function showHeaderOnScroll() {
@@ -154,9 +149,6 @@
       prevScrollPos = currentScrollPos;        
     });
     </script>
-    
-    
-    
     <header id="profileHeader">
       <nav class="pt-3 navbar navbar-expand-lg animate">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
@@ -193,60 +185,31 @@
                   <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Ctrl &#43; k to Search...' aria-label="Search" oninput="searchOnChange(event)">
                 </div>
               </li>
-              
-              
-              
-              
-              
-              
-              
-              
-              
               <li class="nav-item navbar-text">
                 <a class="nav-link" href="/#projects"
                   aria-label="projects">
                   Portfolio
                 </a>
               </li>
-              
-              
-              
-              
-              
               <li class="nav-item navbar-text">
                 <a class="nav-link" href="/#contact"
                   aria-label="contact">
                   Contact
                 </a>
               </li>
-              
-              
-              
-              
-              
-              
               <li class="nav-item navbar-text">
                 <a class="nav-link" href="/blogs" title="Blog posts">
                   
                   Blog
                 </a>
               </li>
-              
-              
-              
-              
               <li class="nav-item navbar-text">
                 <a class="nav-link" href="/gallery" title="Blog posts">
                   
                   Gallery
                 </a>
               </li>
-              
-              
-              
-              
               <li class="nav-item navbar-text">
-                
                 <div class="text-center">
                   <button id="theme-toggle">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -266,10 +229,7 @@
                   </button>
                 </div>
               </li>
-              
-              
             </ul>
-            
           </div>
         </div>
       </nav>
@@ -600,60 +560,115 @@
           <div class="row justify-content-center px-3 px-md-5">
             <section class="hero-section">
                 <div class="card-grid">
-                  <a class="card" href="#">
-                    
+                  <a class="card" href="#" data-hystmodal="#project-1">
                     <div class="card__background" style="background-image: url(/images/managing-api-keys-preview.png)"></div>
                     <div class="card__content">
-                      <h3 class="card__heading"></h3>
+                      <h3 class="card__heading">
+                        <button class="card__button">View sample</button>
+                      </h3>
                     </div>
                   </a>
-                  <a class="card" href="#">
-                    <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+
+                  <a class="card" href="#" data-hystmodal="#project-2">
+                    <div class="card__background" style="background-image: url(/images/enable-domain-capture-preview.png)"></div>
                     <div class="card__content">
-                      <h3 class="card__heading">Example Card Heading</h3>
+                      <h3 class="card__heading">
+                        <button class="card__button">View sample</button>
+                      </h3>
                     </div>
                   </a>
-                  <a class="card" href="#">
-                    <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+
+                  <a class="card" href="#" data-hystmodal="#project-3">
+                    <div class="card__background" style="background-image: url(/images/scim-provisioning-overview-preview.png)"></div>
                     <div class="card__content">
-                      <h3 class="card__heading">Example Card Heading</h3>
+                      <h3 class="card__heading">
+                        <button class="card__button">View sample</button>
+                      </h3>
                     </div>
-                    </a>
-                    <br>
-                    <a class="card" href="#">
-                      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
-                      <div class="card__content">
-                        <h3 class="card__heading">Example Card Heading</h3>
-                      </div>
-                    </a>
-                    <a class="card" href="#">
-                        <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
-                        <div class="card__content">
-                          <h3 class="card__heading">Example Card Heading</h3>
-                        </div>
-                      </a>
-                      <a class="card" href="#">
-                        <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
-                        <div class="card__content">
-                          <h3 class="card__heading">Example Card Heading</h3>
-                        </div>
-                      </a>
+                  </a>
+
+                  <a class="card" href="#" data-hystmodal="#project-4">
+                    <div class="card__background" style="background-image: url(/images/secret-scanner-preview.png)"></div>
+                    <div class="card__content">
+                      <h3 class="card__heading">
+                        <button class="card__button">View sample</button>
+                      </h3>
+                    </div>
+                  </a>
+
+                  <a class="card" href="#" data-hystmodal="#project-5">
+                    <div class="card__background" style="background-image: url(/images/team-mgmt-overview-preview.png)"></div>
+                    <div class="card__content">
+                      <h3 class="card__heading">
+                        <button class="card__button">View sample</button>
+                      </h3>
+                    </div>
+                  </a>
+
+                  <a class="card" href="#" data-hystmodal="#project-6">
+                    <div class="card__background" style="background-image: url(/images/verification-for-account-capture-preview.png)"></div>
+                    <div class="card__content">
+                      <h3 class="card__heading">
+                        <button class="card__button">View sample</button>
+                      </h3>
+                    </div>
+                  </a>
                 <div>
               </section>
- 
+          </div>
+        </div>
 
-<!-- <a id="demo01" href="#animatedModal">DEMO01</a> -->
+        <div class="hystmodal" id="project-1" aria-hidden="true">
+          <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+              <button data-hystclose class="hystmodal__close"></button>
+              <img src="/images/managing-api-keys.png" alt="Managing API keys" class="img-fluid" />
+            </div>
+          </div>
+        </div>
 
-            <!--DEMO01-->
-            <!-- <div id="animatedModal"> -->
-              <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
-              <!-- <div class="close-animatedModal close"> 
-              </div>
+        <div class="hystmodal" id="project-2" aria-hidden="true">
+          <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+              <button data-hystclose class="hystmodal__close"></button>
+              <img src="/images/enable-domain-capture.png" alt="Enable domain capture" class="img-fluid" />
+            </div>
+          </div>
+        </div>
 
-              <div class="modal-content"> -->
-                <!--Your modal content goes here-->
-              <!-- </div>
-            </div> -->
+        <div class="hystmodal" id="project-3" aria-hidden="true">
+          <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+              <button data-hystclose class="hystmodal__close"></button>
+              <img src="/images/scim-provisioning-overview.png" alt="SCIM provisioning" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+
+        <div class="hystmodal" id="project-4" aria-hidden="true">
+          <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+              <button data-hystclose class="hystmodal__close"></button>
+              <img src="/images/secret-scanner.png" alt="Secret scanner" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+
+        <div class="hystmodal" id="project-5" aria-hidden="true">
+          <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+              <button data-hystclose class="hystmodal__close"></button>
+              <img src="/images/team-mgmt-overview.png" alt="Team management" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+
+        <div class="hystmodal" id="project-6" aria-hidden="true">
+          <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+              <button data-hystclose class="hystmodal__close"></button>
+              <img src="/images/verification-for-account-capture.png" alt="Verifications for account capture" class="img-fluid" />
+            </div>
           </div>
         </div>
       </section>
@@ -670,9 +685,7 @@
                 
                 <div class="text-center pt-3">
                   <a 
-                    href='
-                    mailto:claireriley001@gmail.com
-                    '
+                    href='mailto:claireriley001@gmail.com'
                     target="_blank"
                     class="btn"
                   >
@@ -726,18 +739,10 @@
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl)
     })
-    
-    // Initialize modal lib
-    $(document).ready(function () {
-      $("#demo01").animatedModal({
-        animatedIn:'lightSpeedIn',
-        animatedOut:'bounceOutDown',
-        color:'#53B1FF',
-      });
-    });
+    new HystModal({
+      linkAttributeName: "data-hystmodal",
+    })
     </script>
-    
-    
     <script src="/js/search.js"></script>
     <section id="search-content" class="py-2">
       <div class="container" id="search-results"></div>
