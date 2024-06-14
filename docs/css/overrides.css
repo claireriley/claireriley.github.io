@@ -108,6 +108,8 @@
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 50px;
+  font-family: "Alata", sans-serif;
+  font-weight: 100;
   font-size: 1.3rem;
 
   transition: filter 200ms ease-in-out;
