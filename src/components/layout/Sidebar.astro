@@ -1,5 +1,6 @@
 ---
 import { config } from "@parseConfig"
+import ThemeToggle from "@components/layout/ThemeToggle.astro"
 
 const navMenu = config.navigation
 
@@ -26,5 +27,6 @@ const isActive = (href: string) =>
         </a>
       ))
     }
+    <ThemeToggle />
   </nav>
 </aside>

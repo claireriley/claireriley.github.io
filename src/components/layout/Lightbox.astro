@@ -9,21 +9,29 @@ import { Icon } from "astro-icon/components"
   aria-label="Image preview"
   class="fixed inset-0 z-50 hidden bg-lightbox-bg/90 backdrop-blur-xs"
 >
-  <button
-    id="lightbox-close"
-    aria-label="Close"
-    class="absolute top-4 right-4 text-muted-foreground transition-colors duration-200 hover:text-foreground"
+  <div
+    id="lightbox-scroll"
+    class="flex h-full w-full items-start justify-center overflow-auto p-4 sm:p-8"
   >
-    <Icon name="ph:x-bold" size={24} />
-  </button>
-
-  <div class="flex h-full w-full items-center justify-center p-4 sm:p-8">
-    <img
-      id="lightbox-img"
-      src=""
-      alt=""
-      class="max-h-full max-w-full rounded-sm object-contain"
-    />
+    <div class="relative w-fit max-w-full">
+      {/* Zero-height sticky bar keeps the close button pinned to the image's
+          top-right corner while a tall image scrolls. */}
+      <div class="pointer-events-none sticky top-0 z-10 flex h-0 justify-end">
+        <button
+          id="lightbox-close"
+          aria-label="Close"
+          class="pointer-events-auto mt-2 mr-2 flex h-11 w-11 items-center justify-center rounded-md border border-[#ffffff]/40 bg-lightbox-bg/50 text-[#ffffff] backdrop-blur-sm transition-colors duration-200 hover:text-[#ffffff]/70 sm:mt-4 sm:mr-4"
+        >
+          <Icon name="ph:x-bold" size={24} />
+        </button>
+      </div>
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="block h-auto max-w-full rounded-sm"
+      />
+    </div>
   </div>
 </div>
 
@@ -34,12 +42,14 @@ import { Icon } from "astro-icon/components"
       "lightbox-img"
     ) as HTMLImageElement
     const lightboxClose = document.getElementById("lightbox-close")!
+    const lightboxScroll = document.getElementById("lightbox-scroll")!
 
     const open = (src: string, alt: string) => {
       lightboxImg.src = src
       lightboxImg.alt = alt
       lightbox.classList.remove("hidden")
       lightbox.classList.add("flex")
+      lightboxScroll.scrollTop = 0
       document.body.style.overflow = "hidden"
     }
 
@@ -53,7 +63,9 @@ import { Icon } from "astro-icon/components"
     document
       .querySelectorAll<HTMLImageElement>("img[data-lightbox]")
       .forEach((img) => {
-        img.addEventListener("click", () => open(img.src, img.alt))
+        img.addEventListener("click", () =>
+          open(img.dataset.lightboxSrc || img.src, img.alt)
+        )
       })
 
     lightboxClose.addEventListener("click", close)

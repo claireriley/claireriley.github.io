@@ -29,6 +29,7 @@
 /* Flexoki Palette Tokens ------------------------------------------------------------ */
 :root {
   /* Base (warm neutrals) */
+  
   --flexoki-paper: oklch(0.9901 0.016 95.3); /* #FFFCF0 */
   --flexoki-base-50: oklch(0.9537 0.0147 98.4); /* #F2F0E5 */
   --flexoki-base-100: oklch(0.9174 0.0148 98.4); /* #E6E4D9 */
@@ -88,7 +89,7 @@
 
 /* shadcn Semantic Variables --------------------------------------------------------- */
 :root {
-  --background: var(--flexoki-paper);
+  --background: #FFFFFA;
   --foreground: var(--flexoki-base-900);
   --card: var(--flexoki-base-50);
   --card-foreground: var(--flexoki-base-900);

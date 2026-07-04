@@ -9,16 +9,16 @@ export const sideyConfig = {
    */
   site: {
     // The main title displayed in browser tabs and search engine results
-    title: "Astro Sidey",
+    title: "Claire Riley | Portfolio",
 
     // A short fallback summary of your site used for SEO and social share cards
-    description: "A minimal, content-focused Astro theme for personal sites.",
+    description: "Claire Riley's technical writing portfolio.",
 
     // The production domain where your site is deployed (no trailing slash)
-    url: "https://sidey.odhyp.com",
+    url: "https://claireriley.github.io/",
 
     // Your name, utilized in copyright strings and author meta tags
-    author: "Odhy Pradhana",
+    author: "Claire Riley",
 
     // The primary language attribute for HTML accessibility engines (e.g., "en", "id")
     locale: "en",
@@ -31,10 +31,8 @@ export const sideyConfig = {
    * You can add, reorder, or remove objects here to update your site's structure.
    */
   navigation: [
-    { label: "Home", href: "/" },
-    { label: "Writings", href: "/writings" },
+    { label: "Portfolio", href: "/" },
     { label: "About", href: "/about" },
-    { label: "RSS", href: "/rss.xml" },
   ],
 }
 

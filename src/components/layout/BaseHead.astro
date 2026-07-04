@@ -22,6 +22,20 @@ const socialImage = new URL(image || "/og-image.png", config.site.url)
 const canonicalURL = new URL(Astro.url.pathname, config.site.url)
 ---
 
+{/* Theme: apply saved/system color scheme before paint to avoid a flash */}
+<script is:inline>
+  const applyTheme = () => {
+    const theme =
+      localStorage.getItem("theme") ??
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light")
+    document.documentElement.classList.toggle("dark", theme === "dark")
+  }
+  applyTheme()
+  document.addEventListener("astro:after-swap", applyTheme)
+</script>
+
 {/* Global Metadata */}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />

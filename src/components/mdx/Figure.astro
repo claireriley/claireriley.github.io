@@ -1,14 +1,64 @@
 ---
+import { Icon } from "astro-icon/components"
+
 interface Props {
   src: string
   alt: string
+  float?: "left" | "right"
+  width?: string
+  /** Optional smaller/readable image shown inline; `src` opens in the lightbox. */
+  previewSrc?: string
+  /** Set false to render a static image with no click-to-enlarge lightbox. */
+  lightbox?: boolean
 }
 
-const { src, alt } = Astro.props
+const { src, alt, float, width, previewSrc, lightbox = true } = Astro.props
+const displaySrc = previewSrc ?? src
 ---
 
-<figure>
-  <img src={src} alt={alt} data-lightbox />
+<figure
+  class:list={[
+    // On phones a floated image is centered as a block so text isn't crushed
+    // beside it; from `sm` up it floats at the given width.
+    float && "mx-auto mb-4 w-1/2 sm:mx-0 sm:mt-0 sm:w-[var(--fig-width,25%)]",
+    float === "right" && "sm:float-right sm:ml-6",
+    float === "left" && "sm:float-left sm:mr-6",
+  ]}
+  style={width ? `--fig-width: ${width}` : undefined}
+>
+  {
+    previewSrc ? (
+      <div class="group relative">
+        <img
+          class="block h-auto w-full cursor-zoom-in"
+          src={displaySrc}
+          alt={alt}
+          data-lightbox
+          data-lightbox-src={src}
+        />
+        {/* Light gray veil + centered cursor-click badge prompting a click.
+            Both are pointer-events-none so the click reaches the image. */}
+        <span class="pointer-events-none absolute inset-0 rounded-sm bg-[var(--flexoki-base-300)]/25" />
+        <span class="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <span class="flex size-12 items-center justify-center rounded-full bg-background/90 text-foreground shadow-md ring-1 ring-[#00b4d8] backdrop-blur-sm transition-transform duration-200 ease-out motion-safe:group-hover:scale-110">
+            <Icon name="ph:cursor-click-fill" class="size-6 text-[#00b4d8]" />
+          </span>
+        </span>
+      </div>
+    ) : (
+      <img
+        class:list={[
+          !float && "h-[50dvh]",
+          // Non-clickable images: cancel the prose zoom cursor so they don't
+          // look interactive.
+          !lightbox && "cursor-default!",
+        ]}
+        src={displaySrc}
+        alt={alt}
+        data-lightbox={lightbox ? true : undefined}
+      />
+    )
+  }
   <figcaption class="mt-2 text-center text-sm *:text-muted-foreground!">
     <slot />
   </figcaption>
